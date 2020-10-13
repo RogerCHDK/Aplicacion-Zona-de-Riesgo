@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "326638727838",
+    "firebase_url": "https://zona-de-riesgo-28fa6.firebaseio.com",
+    "project_id": "zona-de-riesgo-28fa6",
+    "storage_bucket": "zona-de-riesgo-28fa6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326638727838:android:1cb7a9b69a2fac0431818f",
+        "android_client_info": {
+          "package_name": "com.example.proyecto_unidad1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326638727838-bimofudgcg7q7g39v6i5vififs08gg8b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.proyecto_unidad1",
+            "certificate_hash": "5f7671e13c097de8b7bf9290855c1318cb7630b1"
+          }
+        },
+        {
+          "client_id": "326638727838-9607ju82kk2fs2akm9c85vd9i610r8tu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt8jZMo3zJppl3oyV1QEGqtnTAXcXgi3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "326638727838-9607ju82kk2fs2akm9c85vd9i610r8tu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
