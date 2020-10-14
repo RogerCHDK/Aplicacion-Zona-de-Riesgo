@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_unidad1/core/models/productModel.dart';
-import 'package:proyecto_unidad1/ui/views/productDetails.dart';
+import 'package:proyecto_unidad1/core/models/municipioModel.dart';
 
-class ProductCard extends StatelessWidget {
+class MunicipioCard extends StatelessWidget {
   //Esta clase es la que muestra toda la informacion del producto
-  final Product productDetails;
+  final Municipio municipioDetails;
 
-  ProductCard({@required this.productDetails});
+  MunicipioCard({@required this.municipioDetails});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       //creo que este es como un boton
       onTap: () {
+        /*
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
             MaterialPageRoute(
-                builder: (_) => ProductDetails(product: productDetails)));
+                builder: (_) => ProductDetails(product: productDetails)));*/
       },
       child: Padding(
         padding: EdgeInsets.all(8),
@@ -29,9 +29,9 @@ class ProductCard extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Hero(
-                  tag: productDetails.id,
+                  tag: municipioDetails.id,
                   child: Image.asset(
-                    'assets/${productDetails.img}.jpg',
+                    'assets/img/computer.jpg',
                     height: MediaQuery.of(context).size.height * 0.35,
                   ),
                 ),
@@ -41,14 +41,14 @@ class ProductCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        productDetails.name,
+                        municipioDetails.nombre,
                         style: TextStyle(
                             fontWeight: FontWeight.w900,
                             fontSize: 22,
                             fontStyle: FontStyle.italic),
                       ),
                       Text(
-                        '${productDetails.price} \$',
+                        municipioDetails.significado,
                         style: TextStyle(
                             fontWeight: FontWeight.w900,
                             fontSize: 22,
