@@ -31,7 +31,7 @@ class ProductCard extends StatelessWidget {
                 Hero(
                   tag: productDetails.id,
                   child: Image.asset(
-                    'assets/${productDetails.img}.jpg',
+                    'assets/img/${productDetails.img}.jpg',
                     height: MediaQuery.of(context).size.height * 0.35,
                   ),
                 ),

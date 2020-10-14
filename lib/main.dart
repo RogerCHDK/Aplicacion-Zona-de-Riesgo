@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        // ChangeNotifierProvider(builder: (_) => locator<CRUDModel>()),
+        ChangeNotifierProvider(builder: (_) => locator<CRUDModel>()),
         ChangeNotifierProvider(builder: (_) => locator<CRUDMunicipios>()),
       ],
       child: MaterialApp(

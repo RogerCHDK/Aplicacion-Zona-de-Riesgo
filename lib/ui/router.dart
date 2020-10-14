@@ -5,13 +5,17 @@ import 'package:proyecto_unidad1/municipios/views/homeViewMunicipios.dart';
 import 'package:proyecto_unidad1/ui/views/addProduct.dart';
 import 'package:proyecto_unidad1/ui/views/homeView.dart';
 import 'package:proyecto_unidad1/ui/views/productDetails.dart';
+import 'package:proyecto_unidad1/widgets/my_tab_bar.dart';
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        //return MaterialPageRoute(builder: (_) => HomeView());
+        return MaterialPageRoute(builder: (_) => MyTabBar());
+      case '/municipio':
         return MaterialPageRoute(builder: (_) => HomeViewMunicipio());
+      case '/producto':
+        return MaterialPageRoute(builder: (_) => HomeView());
       case '/addProduct':
         return MaterialPageRoute(builder: (_) => AddProduct());
       case '/productDetails':
