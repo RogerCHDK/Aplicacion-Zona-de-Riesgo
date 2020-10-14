@@ -3,6 +3,7 @@ import 'package:proyecto_unidad1/core/models/municipioModel.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
 import 'package:proyecto_unidad1/core/viewmodels/CRUDMunicipios.dart';
+import 'package:proyecto_unidad1/municipios/views/addMunicipio.dart';
 import 'package:proyecto_unidad1/municipios/widgets/municipioCard.dart';
 
 class HomeViewMunicipio extends StatefulWidget {
@@ -22,9 +23,10 @@ class _HomeViewMunicipioState extends State<HomeViewMunicipio> {
           Navigator.pushNamed(context, '/addMunicipio');
         },
         child: Icon(Icons.add),
+        isExtended: true,
       ),
       appBar: AppBar(
-        title: Center(child: Text('Home')),
+        title: Center(child: Text('Municipio')),
       ),
       body: Container(
         child: StreamBuilder(
@@ -33,13 +35,12 @@ class _HomeViewMunicipioState extends State<HomeViewMunicipio> {
             builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
               if (snapshot.hasData) {
                 municipios = snapshot.data.documents
-                    .map((doc) => Municipio.fromMap(doc.data))
+                    .map((doc) => Municipio.fromMap(doc.data, doc.documentID))
                     .toList();
                 return ListView.builder(
-                  itemCount: municipios.length,
-                  itemBuilder: (buildContext, index) =>
-                      MunicipioCard(municipioDetails: municipios[index]),
-                );
+                    itemCount: municipios.length,
+                    itemBuilder: (buildContext, index) =>
+                        MunicipioCard(municipioDetails: municipios[index]));
               } else {
                 return Text('fetching');
               }

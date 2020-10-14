@@ -6,6 +6,7 @@ import 'package:proyecto_unidad1/ui/views/addProduct.dart';
 import 'package:proyecto_unidad1/ui/views/homeView.dart';
 import 'package:proyecto_unidad1/ui/views/productDetails.dart';
 import 'package:proyecto_unidad1/widgets/my_tab_bar.dart';
+import 'package:proyecto_unidad1/widgets/my_tab_bar_cupertino.dart';
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {

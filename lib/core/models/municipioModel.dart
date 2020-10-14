@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class Municipio {
+  String uid;
   String id;
   String nombre;
   String significado;
@@ -9,15 +10,17 @@ class Municipio {
   String altitud;
 
   Municipio(
-      {@required this.id,
+      {this.uid,
+      @required this.id,
       @required this.nombre,
       @required this.significado,
       @required this.cabeceraMunicipal,
       @required this.superficie,
       @required this.altitud});
 
-  Municipio.fromMap(Map snapshot)
-      : id = snapshot['nombre'] ?? '',
+  Municipio.fromMap(Map snapshot, String uid)
+      : uid = uid ?? '',
+        id = snapshot['id'] ?? '',
         nombre = snapshot['nombre'] ?? '',
         significado = snapshot['significado'] ?? '',
         cabeceraMunicipal = snapshot['cabeceraMunicipal'] ?? '',
@@ -29,7 +32,7 @@ class Municipio {
       "id": id,
       "nombre": nombre,
       "significado": significado,
-      "cabecera_municipal": cabeceraMunicipal,
+      "cabeceraMunicipal": cabeceraMunicipal,
       "superficie": superficie,
       "altitud": altitud,
     };

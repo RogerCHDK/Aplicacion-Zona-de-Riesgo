@@ -12,8 +12,9 @@ class CRUDMunicipios extends ChangeNotifier {
 
   Future<List<Municipio>> fetchProducts() async {
     var result = await _api.getDataCollection();
-    products =
-        result.documents.map((doc) => Municipio.fromMap(doc.data)).toList();
+    products = result.documents
+        .map((doc) => Municipio.fromMap(doc.data, doc.documentID))
+        .toList();
     return products;
   }
 
@@ -23,7 +24,7 @@ class CRUDMunicipios extends ChangeNotifier {
 
   Future<Municipio> getProductById(String id) async {
     var doc = await _api.getDocumentById(id);
-    return Municipio.fromMap(doc.data);
+    return Municipio.fromMap(doc.data, doc.documentID);
   }
 
   Future removeProduct(String id) async {
