@@ -75,6 +75,12 @@ class MunicipioCard extends StatelessWidget {
               ),
             ]));
 
+    final clima = Text(
+      'Clima: ${this.municipioDetails.clima}',
+      style: TextStyle(
+          fontFamily: 'Lato', fontSize: 16.0, fontWeight: FontWeight.bold),
+    );
+
     final card = Container(
       margin: EdgeInsets.only(top: 20.0, bottom: 20.0),
       width: screenWidth * 0.65,
@@ -97,7 +103,8 @@ class MunicipioCard extends StatelessWidget {
               significado,
               cabeceraMunicipal,
               superficie,
-              altitud
+              altitud,
+              clima
             ],
           )),
     );

@@ -20,6 +20,7 @@ class _ModifyMunicipioState extends State<ModifyMunicipio> {
   String cabeceraMunicipal;
   String superficie;
   String altitud;
+  String clima;
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +70,9 @@ class _ModifyMunicipioState extends State<ModifyMunicipio> {
                     }
                   },
                   onSaved: (value) => significado = value),
+              SizedBox(
+                height: 16,
+              ),
               TextFormField(
                   initialValue: widget.municipio.cabeceraMunicipal,
                   decoration: InputDecoration(
@@ -83,6 +87,9 @@ class _ModifyMunicipioState extends State<ModifyMunicipio> {
                     }
                   },
                   onSaved: (value) => cabeceraMunicipal = value),
+              SizedBox(
+                height: 16,
+              ),
               TextFormField(
                   keyboardType: TextInputType.numberWithOptions(),
                   initialValue: widget.municipio.superficie,
@@ -98,6 +105,9 @@ class _ModifyMunicipioState extends State<ModifyMunicipio> {
                     }
                   },
                   onSaved: (value) => superficie = value),
+              SizedBox(
+                height: 16,
+              ),
               TextFormField(
                   keyboardType: TextInputType.numberWithOptions(),
                   initialValue: widget.municipio.altitud,
@@ -113,6 +123,26 @@ class _ModifyMunicipioState extends State<ModifyMunicipio> {
                     }
                   },
                   onSaved: (value) => altitud = value),
+              SizedBox(
+                height: 16,
+              ),
+              TextFormField(
+                  initialValue: widget.municipio.clima,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Clima',
+                    fillColor: Colors.grey[300],
+                    filled: true,
+                  ),
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return 'Por favor introduce la altitud';
+                    }
+                  },
+                  onSaved: (value) => clima = value),
+              SizedBox(
+                height: 16,
+              ),
               RaisedButton(
                 splashColor: Colors.red,
                 onPressed: () async {
@@ -125,7 +155,8 @@ class _ModifyMunicipioState extends State<ModifyMunicipio> {
                             significado: significado,
                             cabeceraMunicipal: cabeceraMunicipal,
                             superficie: superficie,
-                            altitud: altitud),
+                            altitud: altitud,
+                            clima: clima),
                         widget.municipio.uid);
                     Navigator.pop(context);
                   }

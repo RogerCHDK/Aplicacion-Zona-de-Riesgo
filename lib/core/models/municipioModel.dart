@@ -8,6 +8,7 @@ class Municipio {
   String cabeceraMunicipal;
   String superficie;
   String altitud;
+  String clima;
 
   Municipio(
       {this.uid,
@@ -16,7 +17,8 @@ class Municipio {
       @required this.significado,
       @required this.cabeceraMunicipal,
       @required this.superficie,
-      @required this.altitud});
+      @required this.altitud,
+      @required this.clima});
 
   Municipio.fromMap(Map snapshot, String uid)
       : uid = uid ?? '',
@@ -25,7 +27,8 @@ class Municipio {
         significado = snapshot['significado'] ?? '',
         cabeceraMunicipal = snapshot['cabeceraMunicipal'] ?? '',
         superficie = snapshot['superficie'] ?? '',
-        altitud = snapshot['altitud'] ?? '';
+        altitud = snapshot['altitud'] ?? '',
+        clima = snapshot['clima'] ?? '';
 
   toJson() {
     return {
@@ -35,6 +38,7 @@ class Municipio {
       "cabeceraMunicipal": cabeceraMunicipal,
       "superficie": superficie,
       "altitud": altitud,
+      "clima": clima,
     };
   }
 }

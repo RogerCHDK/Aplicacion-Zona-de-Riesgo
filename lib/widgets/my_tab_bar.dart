@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_unidad1/filtros/filtro_screen.dart';
+import 'package:proyecto_unidad1/filtros/widgets/filtroCard.dart';
 import 'package:proyecto_unidad1/municipios/views/homeViewMunicipios.dart';
 import 'package:proyecto_unidad1/riesgo/riesgo_screen.dart';
 import 'package:proyecto_unidad1/user/user_profile.dart';
@@ -19,7 +19,7 @@ class _MyTabBar extends State<MyTabBar> {
   Widget build(BuildContext context) {
     final List<Widget> widgetsChildren = [
       HomeViewMunicipio(),
-      FiltroScreen(),
+      FiltroCard(),
       RiesgoScreen(),
       UserProfile(),
     ];

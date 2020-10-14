@@ -16,6 +16,7 @@ class _AddMunicipioState extends State<AddMunicipio> {
   String cabeceraMunicipal;
   String superficie;
   String altitud;
+  String clima;
 
   @override
   Widget build(BuildContext context) {
@@ -137,6 +138,20 @@ class _AddMunicipioState extends State<AddMunicipio> {
               SizedBox(
                 height: 16,
               ),
+              TextFormField(
+                  //Input para la cabecera municipal
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: 'Clima',
+                    fillColor: Colors.grey[300],
+                    filled: true,
+                  ),
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return 'Por favor introduce el clima';
+                    }
+                  },
+                  onSaved: (value) => clima = value),
               RaisedButton(
                 splashColor: Colors.red,
                 onPressed: () async {
@@ -148,7 +163,8 @@ class _AddMunicipioState extends State<AddMunicipio> {
                         significado: significado,
                         cabeceraMunicipal: cabeceraMunicipal,
                         superficie: superficie,
-                        altitud: altitud));
+                        altitud: altitud,
+                        clima: clima));
                     Navigator.pop(context);
                   }
                 },
