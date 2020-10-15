@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:proyecto_unidad1/filtros/views/elevacion_screen.dart';
+import 'package:proyecto_unidad1/riesgo/views/riesgo_screen.dart';
 
-class FiltroCard extends StatelessWidget {
+class RiesgoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final elevacion_card = GestureDetector(
+    final inundacion_card = GestureDetector(
       //creo que este es como un boton
       onTap: () {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => ElevacionScreen()));
+            MaterialPageRoute(builder: (_) => RiesgoScreen()));
       },
       child: Card(
         elevation: 5,
@@ -21,7 +21,7 @@ class FiltroCard extends StatelessWidget {
               Hero(
                 tag: "1",
                 child: Image.asset(
-                  'assets/img/elevacion.jpg',
+                  'assets/img/inundaciones.jpg',
                   height: MediaQuery.of(context).size.height * 0.30,
                 ),
               ),
@@ -31,7 +31,7 @@ class FiltroCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      "Elevacion",
+                      "Inundación",
                       style: TextStyle(
                           fontWeight: FontWeight.w800,
                           fontSize: 23,
@@ -46,13 +46,13 @@ class FiltroCard extends StatelessWidget {
       ),
     );
 
-    final rio_card = GestureDetector(
+    final deslave_card = GestureDetector(
       //creo que este es como un boton
       onTap: () {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => ElevacionScreen()));
+            MaterialPageRoute(builder: (_) => RiesgoScreen()));
       },
       child: Card(
         elevation: 5,
@@ -63,7 +63,7 @@ class FiltroCard extends StatelessWidget {
               Hero(
                 tag: "2",
                 child: Image.asset(
-                  'assets/img/rio.jpg',
+                  'assets/img/deslave.jpg',
                   height: MediaQuery.of(context).size.height * 0.30,
                 ),
               ),
@@ -73,7 +73,7 @@ class FiltroCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      "Rios y Canales",
+                      "Deslave",
                       style: TextStyle(
                           fontWeight: FontWeight.w800,
                           fontSize: 23,
@@ -88,13 +88,13 @@ class FiltroCard extends StatelessWidget {
       ),
     );
 
-    final cuerpo_agua_card = GestureDetector(
+    final zona_sismica_card = GestureDetector(
       //creo que este es como un boton
       onTap: () {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => ElevacionScreen()));
+            MaterialPageRoute(builder: (_) => RiesgoScreen()));
       },
       child: Card(
         elevation: 5,
@@ -105,7 +105,7 @@ class FiltroCard extends StatelessWidget {
               Hero(
                 tag: "3",
                 child: Image.asset(
-                  'assets/img/presa.jpg',
+                  'assets/img/sismo.jpg',
                   height: MediaQuery.of(context).size.height * 0.30,
                 ),
               ),
@@ -115,7 +115,7 @@ class FiltroCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      "Cuerpo de\nAgua",
+                      "Zona\nSismica",
                       style: TextStyle(
                           fontWeight: FontWeight.w800,
                           fontSize: 23,
@@ -130,13 +130,13 @@ class FiltroCard extends StatelessWidget {
       ),
     );
 
-    final mas_poblados_card = GestureDetector(
+    final incendio_card = GestureDetector(
       //creo que este es como un boton
       onTap: () {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => ElevacionScreen()));
+            MaterialPageRoute(builder: (_) => RiesgoScreen()));
       },
       child: Card(
         elevation: 5,
@@ -147,7 +147,7 @@ class FiltroCard extends StatelessWidget {
               Hero(
                 tag: "4",
                 child: Image.asset(
-                  'assets/img/mas_poblados.jpg',
+                  'assets/img/incendio.jpg',
                   height: MediaQuery.of(context).size.height * 0.30,
                 ),
               ),
@@ -157,7 +157,7 @@ class FiltroCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      "Municipios más\nPoblados",
+                      "Incendio\nForestal",
                       style: TextStyle(
                           fontWeight: FontWeight.w800,
                           fontSize: 23,
@@ -172,13 +172,13 @@ class FiltroCard extends StatelessWidget {
       ),
     );
 
-    final mas_extensos_card = GestureDetector(
+    final zona_volcanica_card = GestureDetector(
       //creo que este es como un boton
       onTap: () {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => ElevacionScreen()));
+            MaterialPageRoute(builder: (_) => RiesgoScreen()));
       },
       child: Card(
         elevation: 5,
@@ -189,7 +189,7 @@ class FiltroCard extends StatelessWidget {
               Hero(
                 tag: "5",
                 child: Image.asset(
-                  'assets/img/mas_extensos.jpg',
+                  'assets/img/volcan.jpg',
                   height: MediaQuery.of(context).size.height * 0.30,
                 ),
               ),
@@ -199,7 +199,7 @@ class FiltroCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      "Municipios más\nExtensos",
+                      "Zona\nVolcanica",
                       style: TextStyle(
                           fontWeight: FontWeight.w800,
                           fontSize: 23,
@@ -214,13 +214,13 @@ class FiltroCard extends StatelessWidget {
       ),
     );
 
-    final menos_poblados_card = GestureDetector(
+    final derrumbes_card = GestureDetector(
       //creo que este es como un boton
       onTap: () {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => ElevacionScreen()));
+            MaterialPageRoute(builder: (_) => RiesgoScreen()));
       },
       child: Card(
         elevation: 5,
@@ -231,7 +231,7 @@ class FiltroCard extends StatelessWidget {
               Hero(
                 tag: "6",
                 child: Image.asset(
-                  'assets/img/menos_poblado.jpg',
+                  'assets/img/derrumbe.jpg',
                   height: MediaQuery.of(context).size.height * 0.30,
                 ),
               ),
@@ -241,49 +241,7 @@ class FiltroCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text(
-                      "Municipios menos\nPoblados",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w800,
-                          fontSize: 23,
-                          fontStyle: FontStyle.italic),
-                    ),
-                  ],
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-
-    final industrializados_card = GestureDetector(
-      //creo que este es como un boton
-      onTap: () {
-        Navigator.push(
-            //cuando es presionado nos lleva a la pantalla de los detalles del producto
-            context,
-            MaterialPageRoute(builder: (_) => ElevacionScreen()));
-      },
-      child: Card(
-        elevation: 5,
-        child: Container(
-          padding: const EdgeInsets.all(12),
-          child: Column(
-            children: <Widget>[
-              Hero(
-                tag: "7",
-                child: Image.asset(
-                  'assets/img/industria.jpg',
-                  height: MediaQuery.of(context).size.height * 0.30,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 90, top: 5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text(
-                      "Municipios\nIndustrializados",
+                      "Derrumbes",
                       style: TextStyle(
                           fontWeight: FontWeight.w800,
                           fontSize: 23,
@@ -308,13 +266,12 @@ class FiltroCard extends StatelessWidget {
               mainAxisSpacing: 10,
               crossAxisCount: 1,
               children: [
-                elevacion_card,
-                rio_card,
-                cuerpo_agua_card,
-                mas_poblados_card,
-                mas_extensos_card,
-                menos_poblados_card,
-                industrializados_card
+                inundacion_card,
+                deslave_card,
+                zona_sismica_card,
+                incendio_card,
+                zona_volcanica_card,
+                derrumbes_card,
               ],
             )),
       ],

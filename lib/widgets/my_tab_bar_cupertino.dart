@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:proyecto_unidad1/filtros/views/elevacion_screen.dart';
 import 'package:proyecto_unidad1/municipios/views/homeViewMunicipios.dart';
-import 'package:proyecto_unidad1/riesgo/riesgo_screen.dart';
+import 'package:proyecto_unidad1/riesgo/views/riesgo_screen.dart';
 import 'package:proyecto_unidad1/user/user_profile.dart';
 
 class MyTabBarCupertino extends StatelessWidget {

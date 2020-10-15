@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_unidad1/filtros/widgets/filtroCard.dart';
 import 'package:proyecto_unidad1/municipios/views/homeViewMunicipios.dart';
-import 'package:proyecto_unidad1/riesgo/riesgo_screen.dart';
+import 'package:proyecto_unidad1/riesgo/views/riesgo_screen.dart';
+import 'package:proyecto_unidad1/riesgo/widgets/riesgoCard.dart';
 import 'package:proyecto_unidad1/user/user_profile.dart';
 
 class MyTabBar extends StatefulWidget {
@@ -20,7 +21,7 @@ class _MyTabBar extends State<MyTabBar> {
     final List<Widget> widgetsChildren = [
       HomeViewMunicipio(),
       FiltroCard(),
-      RiesgoScreen(),
+      RiesgoCard(),
       UserProfile(),
     ];
     return Scaffold(
