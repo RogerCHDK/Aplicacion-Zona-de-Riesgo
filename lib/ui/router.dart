@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:proyecto_unidad1/municipios/views/addMunicipio.dart';
 import 'package:proyecto_unidad1/municipios/views/homeViewMunicipios.dart';
+import 'package:proyecto_unidad1/riesgo/views/addRiesgo.dart';
 import 'package:proyecto_unidad1/ui/views/addProduct.dart';
 import 'package:proyecto_unidad1/ui/views/homeView.dart';
 import 'package:proyecto_unidad1/ui/views/productDetails.dart';

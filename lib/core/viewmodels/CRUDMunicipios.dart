@@ -41,4 +41,11 @@ class CRUDMunicipios extends ChangeNotifier {
     var result = await _api.addDocument(data.toJson());
     return;
   }
+
+  Future agregarVarios(List<Municipio> data) async {
+    for (Municipio municipio in data) {
+      var result = await _api.addDocument(municipio.toJson());
+    }
+    return;
+  }
 }

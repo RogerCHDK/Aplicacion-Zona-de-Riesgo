@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:proyecto_unidad1/core/viewmodels/CRUDFiltro.dart';
 import 'package:proyecto_unidad1/core/viewmodels/CRUDModel.dart';
 import 'package:proyecto_unidad1/core/viewmodels/CRUDMunicipios.dart';
+import 'package:proyecto_unidad1/core/viewmodels/CRUDRiesgos.dart';
 import 'package:proyecto_unidad1/locator.dart';
 import 'package:proyecto_unidad1/ui/router.dart';
 
@@ -17,6 +19,8 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(builder: (_) => locator<CRUDModel>()),
         ChangeNotifierProvider(builder: (_) => locator<CRUDMunicipios>()),
+        ChangeNotifierProvider(builder: (_) => locator<CRUDFiltro>()),
+        ChangeNotifierProvider(builder: (_) => locator<CRUDRiesgo>()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

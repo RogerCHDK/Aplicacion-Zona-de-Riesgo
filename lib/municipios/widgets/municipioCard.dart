@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:proyecto_unidad1/core/models/municipioModel.dart';
 import 'package:proyecto_unidad1/core/viewmodels/CRUDMunicipios.dart';
 import 'package:proyecto_unidad1/municipios/views/modifyMunicipio.dart';
+import 'package:proyecto_unidad1/riesgo/views/addRiesgo.dart';
 import 'package:proyecto_unidad1/widgets/floating_action_button_green.dart';
 
 class MunicipioCard extends StatelessWidget {
@@ -47,7 +48,7 @@ class MunicipioCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Cabecera Municipal: ${this.municipioDetails.cabeceraMunicipal}',
+                'Cabecera: ${this.municipioDetails.cabeceraMunicipal}',
                 style: TextStyle(
                     fontFamily: 'Lato',
                     fontSize: 16.0,
@@ -110,8 +111,8 @@ class MunicipioCard extends StatelessWidget {
     );
 
     final botones_crud = Container(
-      margin: EdgeInsets.only(left: 230.0, top: 180.0),
-      width: screenWidth * 0.65,
+      margin: EdgeInsets.only(left: 200.0, top: 120.0),
+      width: screenWidth * 0.85,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -131,13 +132,23 @@ class MunicipioCard extends StatelessWidget {
             onPressed: () async {
               await municipioProvider.removeProduct(municipioDetails.uid);
             },
+          ),
+          FloatingActionButtonGreen(
+            //agregar zona de riesgo
+            iconData: Icons.warning,
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => AddRiesgo(municipio: municipioDetails)));
+            },
           )
         ],
       ),
     );
 
     return Stack(
-      alignment: Alignment(0.0, 0.8),
+      alignment: Alignment(0.2, 1.2),
       children: <Widget>[card, botones_crud],
     );
   }

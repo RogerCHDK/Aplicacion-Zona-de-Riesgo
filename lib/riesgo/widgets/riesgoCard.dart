@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:proyecto_unidad1/riesgo/views/riesgoDetails.dart';
 import 'package:proyecto_unidad1/riesgo/views/riesgo_screen.dart';
 
 class RiesgoCard extends StatelessWidget {
@@ -10,7 +11,7 @@ class RiesgoCard extends StatelessWidget {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => RiesgoScreen()));
+            MaterialPageRoute(builder: (_) => RiesgoDetails()));
       },
       child: Card(
         elevation: 5,
@@ -256,24 +257,37 @@ class RiesgoCard extends StatelessWidget {
       ),
     );
 
-    return CustomScrollView(
-      primary: false,
-      slivers: <Widget>[
-        SliverPadding(
-            padding: const EdgeInsets.all(20),
-            sliver: SliverGrid.count(
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              crossAxisCount: 1,
-              children: [
-                inundacion_card,
-                deslave_card,
-                zona_sismica_card,
-                incendio_card,
-                zona_volcanica_card,
-                derrumbes_card,
-              ],
-            )),
+    return Stack(
+      //alignment: Alignment(0.9, 0.95),
+      children: [
+        CustomScrollView(
+          primary: false,
+          slivers: <Widget>[
+            SliverPadding(
+                padding: const EdgeInsets.all(20),
+                sliver: SliverGrid.count(
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  crossAxisCount: 1,
+                  children: [
+                    inundacion_card,
+                    deslave_card,
+                    zona_sismica_card,
+                    incendio_card,
+                    zona_volcanica_card,
+                    derrumbes_card,
+                  ],
+                )),
+          ],
+        ),
+        /*FloatingActionButton(
+          //este es el boton con la accion de llevarnos al formulario para cear productos
+          onPressed: () {
+            Navigator.pushNamed(context, '/addRiesgo');
+          },
+          child: Icon(Icons.add),
+          isExtended: true,
+        ),*/
       ],
     );
   }
