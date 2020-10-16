@@ -41,4 +41,15 @@ class CRUDFiltro extends ChangeNotifier {
     var result = await _api.addDocument(data.toJson());
     return;
   }
+
+  Future agregarVarios(List<Filtro> data) async {
+    for (Filtro municipio in data) {
+      var result = await _api.addDocument(municipio.toJson());
+    }
+    return;
+  }
+
+  Stream<QuerySnapshot> filtroRiesgo(String filtro) {
+    return _api.filtroNombre(filtro);
+  }
 }

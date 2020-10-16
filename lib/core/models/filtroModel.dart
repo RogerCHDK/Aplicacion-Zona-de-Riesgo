@@ -2,43 +2,43 @@ import 'package:flutter/cupertino.dart';
 
 class Filtro {
   String uid;
-  String id;
+  String municipio;
   String nombre;
-  String significado;
-  String cabeceraMunicipal;
-  String superficie;
   String altitud;
-  String clima;
+  String longitud;
+  String capacidad;
+  String poblacion;
+  String superficie;
 
   Filtro(
       {this.uid,
-      @required this.id,
-      @required this.nombre,
-      @required this.significado,
-      @required this.cabeceraMunicipal,
-      @required this.superficie,
-      @required this.altitud,
-      @required this.clima});
+      this.municipio,
+      this.nombre,
+      this.altitud,
+      this.longitud,
+      this.capacidad,
+      this.poblacion,
+      this.superficie});
 
   Filtro.fromMap(Map snapshot, String uid)
       : uid = uid ?? '',
-        id = snapshot['id'] ?? '',
+        municipio = snapshot['municipio'] ?? '',
         nombre = snapshot['nombre'] ?? '',
-        significado = snapshot['significado'] ?? '',
-        cabeceraMunicipal = snapshot['cabeceraMunicipal'] ?? '',
-        superficie = snapshot['superficie'] ?? '',
         altitud = snapshot['altitud'] ?? '',
-        clima = snapshot['clima'] ?? '';
+        longitud = snapshot['longitud'] ?? '',
+        superficie = snapshot['superficie'] ?? '',
+        capacidad = snapshot['capacidad'] ?? '',
+        poblacion = snapshot['poblacion'] ?? '';
 
   toJson() {
     return {
-      "id": id,
+      "municipio": municipio,
       "nombre": nombre,
-      "significado": significado,
-      "cabeceraMunicipal": cabeceraMunicipal,
-      "superficie": superficie,
       "altitud": altitud,
-      "clima": clima,
+      "longitud": longitud,
+      "superficie": superficie,
+      "capacidad": capacidad,
+      "poblacion": poblacion,
     };
   }
 }

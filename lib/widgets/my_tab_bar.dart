@@ -3,6 +3,8 @@ import 'package:proyecto_unidad1/filtros/widgets/filtroCard.dart';
 import 'package:proyecto_unidad1/municipios/views/homeViewMunicipios.dart';
 import 'package:proyecto_unidad1/riesgo/views/riesgo_screen.dart';
 import 'package:proyecto_unidad1/riesgo/widgets/riesgoCard.dart';
+import 'package:proyecto_unidad1/user/seedFiltros.dart';
+import 'package:proyecto_unidad1/user/seedRiesgo.dart';
 import 'package:proyecto_unidad1/user/user_profile.dart';
 
 class MyTabBar extends StatefulWidget {
@@ -22,7 +24,7 @@ class _MyTabBar extends State<MyTabBar> {
       HomeViewMunicipio(),
       FiltroCard(),
       RiesgoCard(),
-      UserProfile(),
+      SeedRiesgo(),
     ];
     return Scaffold(
       body: widgetsChildren[indexTap],
