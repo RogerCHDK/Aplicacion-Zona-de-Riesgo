@@ -42,11 +42,7 @@ class CRUDRiesgo extends ChangeNotifier {
     return;
   }
 
-  Future<List<Riesgo>> filtroRiesgo(String riesgo) async {
-    var result = await _api.filtroNombre(riesgo);
-    products = result.documents
-        .map((doc) => Riesgo.fromMap(doc.data, doc.documentID))
-        .toList();
-    return products;
+  Stream<QuerySnapshot> filtroRiesgo(String riesgo) {
+    return _api.filtroNombre(riesgo);
   }
 }

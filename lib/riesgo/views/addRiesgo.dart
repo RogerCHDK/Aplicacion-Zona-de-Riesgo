@@ -67,7 +67,7 @@ class _AddRiesgoState extends State<AddRiesgo> {
                   if (_formKey.currentState.validate()) {
                     _formKey.currentState.save();
                     await riesgoProvider.addProduct(Riesgo(
-                      id_municipio: widget.municipio.uid,
+                      municipio: widget.municipio.nombre,
                       nombre: nombre,
                     ));
                     Navigator.pop(context);

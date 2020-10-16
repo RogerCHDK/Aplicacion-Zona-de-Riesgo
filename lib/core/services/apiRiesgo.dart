@@ -34,7 +34,7 @@ class ApiRiesgo {
     return ref.document(id).updateData(data);
   }
 
-  Future<QuerySnapshot> filtroNombre(String riesgo) {
-    return ref.where("nombre", isEqualTo: riesgo).getDocuments();
+  Stream<QuerySnapshot> filtroNombre(String riesgo) {
+    return ref.where("nombre", isEqualTo: riesgo).snapshots();
   }
 }

@@ -48,4 +48,8 @@ class CRUDMunicipios extends ChangeNotifier {
     }
     return;
   }
+
+  Stream<QuerySnapshot> filtroMunicipio(String nombreMunicipio) {
+    return _api.filtroNombre(nombreMunicipio);
+  }
 }

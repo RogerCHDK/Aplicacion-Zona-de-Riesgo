@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_unidad1/riesgo/views/riesgoDetails.dart';
+import 'package:proyecto_unidad1/riesgo/views/riesgoMunicipios.dart';
 import 'package:proyecto_unidad1/riesgo/views/riesgo_screen.dart';
 
 class RiesgoCard extends StatelessWidget {
@@ -11,7 +12,8 @@ class RiesgoCard extends StatelessWidget {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => RiesgoDetails()));
+            MaterialPageRoute(
+                builder: (_) => RiesgosMunicipios(nombreRiesgo: "Inundacion")));
       },
       child: Card(
         elevation: 5,
