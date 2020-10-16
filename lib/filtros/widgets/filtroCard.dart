@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:proyecto_unidad1/filtros/views/elevacion_screen.dart';
+import 'package:proyecto_unidad1/filtros/views/filtroMunicipios.dart';
 
 class FiltroCard extends StatelessWidget {
   @override
@@ -10,7 +11,8 @@ class FiltroCard extends StatelessWidget {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => ElevacionScreen()));
+            MaterialPageRoute(
+                builder: (_) => FiltroMunicipios(nombreFiltro: "Elevacion")));
       },
       child: Card(
         elevation: 5,
@@ -52,7 +54,8 @@ class FiltroCard extends StatelessWidget {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => ElevacionScreen()));
+            MaterialPageRoute(
+                builder: (_) => FiltroMunicipios(nombreFiltro: "Rios")));
       },
       child: Card(
         elevation: 5,
@@ -94,7 +97,8 @@ class FiltroCard extends StatelessWidget {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => ElevacionScreen()));
+            MaterialPageRoute(
+                builder: (_) => FiltroMunicipios(nombreFiltro: "Cuerpo Agua")));
       },
       child: Card(
         elevation: 5,
@@ -136,7 +140,9 @@ class FiltroCard extends StatelessWidget {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => ElevacionScreen()));
+            MaterialPageRoute(
+                builder: (_) =>
+                    FiltroMunicipios(nombreFiltro: "Mas Poblados")));
       },
       child: Card(
         elevation: 5,
@@ -178,7 +184,9 @@ class FiltroCard extends StatelessWidget {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => ElevacionScreen()));
+            MaterialPageRoute(
+                builder: (_) =>
+                    FiltroMunicipios(nombreFiltro: "Mas Extensos")));
       },
       child: Card(
         elevation: 5,
@@ -220,7 +228,9 @@ class FiltroCard extends StatelessWidget {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => ElevacionScreen()));
+            MaterialPageRoute(
+                builder: (_) =>
+                    FiltroMunicipios(nombreFiltro: "Menos Extensos")));
       },
       child: Card(
         elevation: 5,
@@ -262,7 +272,9 @@ class FiltroCard extends StatelessWidget {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => ElevacionScreen()));
+            MaterialPageRoute(
+                builder: (_) =>
+                    FiltroMunicipios(nombreFiltro: "Industrializado")));
       },
       child: Card(
         elevation: 5,

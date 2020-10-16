@@ -42,6 +42,13 @@ class CRUDRiesgo extends ChangeNotifier {
     return;
   }
 
+  Future agregarVarios(List<Riesgo> data) async {
+    for (Riesgo municipio in data) {
+      var result = await _api.addDocument(municipio.toJson());
+    }
+    return;
+  }
+
   Stream<QuerySnapshot> filtroRiesgo(String riesgo) {
     return _api.filtroNombre(riesgo);
   }

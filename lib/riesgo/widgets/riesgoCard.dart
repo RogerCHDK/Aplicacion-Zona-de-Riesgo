@@ -55,7 +55,8 @@ class RiesgoCard extends StatelessWidget {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => RiesgoScreen()));
+            MaterialPageRoute(
+                builder: (_) => RiesgosMunicipios(nombreRiesgo: "Deslave")));
       },
       child: Card(
         elevation: 5,
@@ -97,7 +98,9 @@ class RiesgoCard extends StatelessWidget {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => RiesgoScreen()));
+            MaterialPageRoute(
+                builder: (_) =>
+                    RiesgosMunicipios(nombreRiesgo: "Zona Sismica")));
       },
       child: Card(
         elevation: 5,
@@ -139,7 +142,9 @@ class RiesgoCard extends StatelessWidget {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => RiesgoScreen()));
+            MaterialPageRoute(
+                builder: (_) =>
+                    RiesgosMunicipios(nombreRiesgo: "Incendio Forestal")));
       },
       child: Card(
         elevation: 5,
@@ -181,7 +186,9 @@ class RiesgoCard extends StatelessWidget {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => RiesgoScreen()));
+            MaterialPageRoute(
+                builder: (_) =>
+                    RiesgosMunicipios(nombreRiesgo: "Zona Volcanica")));
       },
       child: Card(
         elevation: 5,
@@ -223,7 +230,8 @@ class RiesgoCard extends StatelessWidget {
         Navigator.push(
             //cuando es presionado nos lleva a la pantalla de los detalles del producto
             context,
-            MaterialPageRoute(builder: (_) => RiesgoScreen()));
+            MaterialPageRoute(
+                builder: (_) => RiesgosMunicipios(nombreRiesgo: "Derrumbes")));
       },
       child: Card(
         elevation: 5,

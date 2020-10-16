@@ -33,4 +33,8 @@ class ApiFiltro {
   Future<void> updateDocument(Map data, String id) {
     return ref.document(id).updateData(data);
   }
+
+  Stream<QuerySnapshot> filtroNombre(String filtro) {
+    return ref.where("nombre", isEqualTo: filtro).snapshots();
+  }
 }
