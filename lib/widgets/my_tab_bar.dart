@@ -24,7 +24,7 @@ class _MyTabBar extends State<MyTabBar> {
       HomeViewMunicipio(),
       FiltroCard(),
       RiesgoCard(),
-      SeedRiesgo(),
+      UserProfile(),
     ];
     return Scaffold(
       body: widgetsChildren[indexTap],

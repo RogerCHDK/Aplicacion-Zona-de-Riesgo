@@ -52,6 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                 email: _email, password: _password);
             print("Logeado: ${user.user.uid}");
             tipoUsuario(user.user.uid);
+            formKey.currentState.reset();
           } catch (e) {
             return showDialog(
               context: context,
@@ -64,18 +65,29 @@ class _LoginPageState extends State<LoginPage> {
           }
         } else {
           try {
-            final user = await _auth.createUserWithEmailAndPassword(
-                email: _email, password: _password);
-            addUser(user.user.uid);
-            print('Usuario regitrado: ${user.user.uid} ');
-            return showDialog(
-              context: context,
-              builder: (context) {
-                return AlertDialog(
-                  title: Text("Registro exitoso"),
-                );
-              },
-            );
+            if (_tipo == "Administrador" || _tipo == "Consultor") {
+              final user = await _auth.createUserWithEmailAndPassword(
+                  email: _email, password: _password);
+              addUser(user.user.uid);
+              print('Usuario regitrado: ${user.user.uid} ');
+              return showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text("Registro exitoso"),
+                  );
+                },
+              );
+              formKey.currentState.reset();
+            } else
+              return showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text("Seleccione Admin/Consultor"),
+                  );
+                },
+              );
           } catch (e) {
             return showDialog(
               context: context,
@@ -91,7 +103,6 @@ class _LoginPageState extends State<LoginPage> {
         print("error" + e);
       }
     }
-    formKey.currentState.reset();
   }
 
   String _isAdmin;
@@ -157,7 +168,7 @@ class _LoginPageState extends State<LoginPage> {
         onSaved: (value) => _email = value,
       ),
       TextFormField(
-        decoration: InputDecoration(labelText: "Password"),
+        decoration: InputDecoration(labelText: "Constraseña"),
         obscureText: true,
         validator: (value) => value.isEmpty ? 'Campo vacío' : null,
         onSaved: (value) => _password = value,
@@ -189,7 +200,9 @@ class _LoginPageState extends State<LoginPage> {
             ],
             onChange: (String label, int index) =>
                 print("label: $label index: $index"),
-            onSelected: (String label) => _tipo = label),
+            onSelected: (String label) {
+              _tipo = label;
+            }),
         RaisedButton(
           child: Text("Crear cuenta", style: TextStyle(fontSize: 18.0)),
           onPressed: validateAndSubmit,
