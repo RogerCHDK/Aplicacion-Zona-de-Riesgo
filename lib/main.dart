@@ -9,6 +9,7 @@ import 'package:proyecto_unidad1/ui/router.dart';
 
 void main() {
   setupLocator();
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         title: 'Product App',
         theme: ThemeData(),
-        onGenerateRoute: Router.generateRoute,
+        onGenerateRoute: Ruta.generateRoute,
       ),
     );
   }

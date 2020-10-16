@@ -8,11 +8,14 @@ import 'package:proyecto_unidad1/ui/views/homeView.dart';
 import 'package:proyecto_unidad1/ui/views/productDetails.dart';
 import 'package:proyecto_unidad1/widgets/my_tab_bar.dart';
 import 'package:proyecto_unidad1/widgets/my_tab_bar_cupertino.dart';
+import 'package:proyecto_unidad1/user/login_page.dart';
 
-class Router {
+class Ruta {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
+        return MaterialPageRoute(builder: (_) => LoginPage());
+      case '/principal':
         return MaterialPageRoute(builder: (_) => MyTabBar());
       case '/municipio':
         return MaterialPageRoute(builder: (_) => HomeViewMunicipio());

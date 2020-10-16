@@ -26,6 +26,7 @@ class _HomeViewMunicipioState extends State<HomeViewMunicipio> {
         isExtended: true,
       ),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Center(child: Text('Municipio')),
       ),
       body: Container(
