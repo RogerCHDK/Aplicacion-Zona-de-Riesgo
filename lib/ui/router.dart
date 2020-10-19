@@ -17,6 +17,8 @@ class Ruta {
         return MaterialPageRoute(builder: (_) => LoginPage());
       case '/principal':
         return MaterialPageRoute(builder: (_) => MyTabBar());
+      case '/principalConsultor':
+        return MaterialPageRoute(builder: (_) => MyTabBarCupertino());
       case '/municipio':
         return MaterialPageRoute(builder: (_) => HomeViewMunicipio());
       case '/producto':

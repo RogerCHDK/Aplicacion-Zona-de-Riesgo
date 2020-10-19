@@ -1,51 +1,61 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:proyecto_unidad1/filtros/views/elevacion_screen.dart';
+import 'package:proyecto_unidad1/filtros/widgets/filtroCard.dart';
+import 'package:proyecto_unidad1/municipios/views/homeViewConsultor.dart';
 import 'package:proyecto_unidad1/municipios/views/homeViewMunicipios.dart';
 import 'package:proyecto_unidad1/riesgo/views/riesgo_screen.dart';
+import 'package:proyecto_unidad1/riesgo/widgets/riesgoCard.dart';
+import 'package:proyecto_unidad1/user/seedFiltros.dart';
+import 'package:proyecto_unidad1/user/seedRiesgo.dart';
 import 'package:proyecto_unidad1/user/user_profile.dart';
 
-class MyTabBarCupertino extends StatelessWidget {
+class MyTabBarCupertino extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    //throw UnimplementedError();
+    return _MyTabBarCupertino();
+  }
+}
+
+class _MyTabBarCupertino extends State<MyTabBarCupertino> {
+  int indexTap = 0;
   @override
   Widget build(BuildContext context) {
+    final List<Widget> widgetsChildren = [
+      HomeViewConsultor(),
+      FiltroCard(),
+      RiesgoCard(),
+      UserProfile(),
+    ];
     return Scaffold(
-        bottomNavigationBar: CupertinoTabScaffold(
-            tabBar: CupertinoTabBar(backgroundColor: Color(0x33FFFFFF), items: [
+      body: widgetsChildren[indexTap],
+      bottomNavigationBar: Theme(
+        data: Theme.of(context).copyWith(
+          canvasColor: Colors.black, //es el color de la barra
+          primaryColor: Colors.purple, //es el color de los iconos
+        ), //la personalizacion
+        child: BottomNavigationBar(
+            onTap: onTapTapped, //le pasa automaticamente el indice
+            currentIndex:
+                indexTap, //le decimos que indice tiene, para que sepa que mostrar
+            items: [
               BottomNavigationBarItem(
-                  icon: Icon(Icons.home, color: Colors.indigo), //Municipios
-                  title: Text("")),
+                  icon: Icon(Icons.home), title: Text("Municipios")),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.search, color: Colors.indigo), //Filtros
-                  title: Text("")),
+                  icon: Icon(Icons.search), title: Text("Filtro")),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.warning, color: Colors.indigo), //Riesgos
-                  title: Text("")),
+                  icon: Icon(Icons.warning), title: Text("Riesgo")),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.person, color: Colors.indigo), //Perfil
-                  title: Text("")),
+                  icon: Icon(Icons.person), title: Text("Perfil")),
             ]),
-            tabBuilder: (BuildContext context, int index) {
-              switch (index) {
-                case 0:
-                  return CupertinoTabView(
-                    builder: (BuildContext context) => HomeViewMunicipio(),
-                  );
-                  break;
-                case 1:
-                  return CupertinoTabView(
-                    builder: (BuildContext context) => ElevacionScreen(),
-                  );
-                  break;
-                case 2:
-                  return CupertinoTabView(
-                    builder: (BuildContext context) => RiesgoScreen(),
-                  );
-                case 3:
-                  return CupertinoTabView(
-                    builder: (BuildContext context) => UserProfile(),
-                  );
-                  break;
-              }
-            }));
+      ),
+    );
+  }
+
+  void onTapTapped(int index) {
+    //este metodo sirve para identificar que icono se selecciono
+    setState(() {
+      indexTap = index;
+    });
   }
 }

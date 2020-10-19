@@ -9,7 +9,8 @@ import 'package:proyecto_unidad1/widgets/floating_action_button_green.dart';
 class MunicipioCard extends StatelessWidget {
   //Esta clase es la que muestra toda la informacion del producto
   final Municipio municipioDetails;
-  MunicipioCard({@required this.municipioDetails});
+  final bool consultor;
+  MunicipioCard({@required this.municipioDetails, @required this.consultor});
 
   @override
   Widget build(BuildContext context) {
@@ -147,9 +148,16 @@ class MunicipioCard extends StatelessWidget {
       ),
     );
 
-    return Stack(
-      alignment: Alignment(0.2, 1.2),
-      children: <Widget>[card, botones_crud],
-    );
+    if (consultor) {
+      return Stack(
+        alignment: Alignment(0.2, 1.2),
+        children: <Widget>[card],
+      );
+    } else {
+      return Stack(
+        alignment: Alignment(0.2, 1.2),
+        children: <Widget>[card, botones_crud],
+      );
+    }
   }
 }

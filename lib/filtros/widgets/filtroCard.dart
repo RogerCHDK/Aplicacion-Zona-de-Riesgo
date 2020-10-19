@@ -320,13 +320,13 @@ class FiltroCard extends StatelessWidget {
               mainAxisSpacing: 10,
               crossAxisCount: 1,
               children: [
-                elevacion_card,
-                rio_card,
                 cuerpo_agua_card,
                 mas_poblados_card,
                 mas_extensos_card,
                 menos_poblados_card,
-                industrializados_card
+                industrializados_card,
+                elevacion_card,
+                rio_card,
               ],
             )),
       ],

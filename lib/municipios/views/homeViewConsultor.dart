@@ -6,25 +6,17 @@ import 'package:proyecto_unidad1/core/viewmodels/CRUDMunicipios.dart';
 import 'package:proyecto_unidad1/municipios/views/addMunicipio.dart';
 import 'package:proyecto_unidad1/municipios/widgets/municipioCard.dart';
 
-class HomeViewMunicipio extends StatefulWidget {
+class HomeViewConsultor extends StatefulWidget {
   @override
-  _HomeViewMunicipioState createState() => _HomeViewMunicipioState();
+  _HomeViewConsultorState createState() => _HomeViewConsultorState();
 }
 
-class _HomeViewMunicipioState extends State<HomeViewMunicipio> {
+class _HomeViewConsultorState extends State<HomeViewConsultor> {
   List<Municipio> municipios;
   @override
   Widget build(BuildContext context) {
     final productProvider = Provider.of<CRUDMunicipios>(context);
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        //este es el boton con la accion de llevarnos al formulario para cear productos
-        onPressed: () {
-          Navigator.pushNamed(context, '/addMunicipio');
-        },
-        child: Icon(Icons.add),
-        isExtended: true,
-      ),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Center(child: Text('Municipio')),
@@ -42,7 +34,7 @@ class _HomeViewMunicipioState extends State<HomeViewMunicipio> {
                     itemCount: municipios.length,
                     itemBuilder: (buildContext, index) => MunicipioCard(
                           municipioDetails: municipios[index],
-                          consultor: false,
+                          consultor: true,
                         ));
               } else {
                 return Text('fetching');
